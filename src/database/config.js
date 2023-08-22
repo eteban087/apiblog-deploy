@@ -9,6 +9,12 @@ const db = new Sequelize(process.env.DB_LINK, {
   database: process.env.DB_DATABASE,
   protocol: process.env.DB_PROTOCOL,
   logging: false,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
 });
 
 module.exports = { db };
