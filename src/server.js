@@ -20,7 +20,7 @@ db.sync({ force: false })
   .then(() => console.log('database sincronized 😃'))
   .catch((error) => console.log(error));
 
-const PORT = process.env.PORT || 3000;
+const PORT = +process.env.PORT || 3000;
 
 const server = app.listen(PORT, () =>
   console.log(`server running on port ${PORT}`)
